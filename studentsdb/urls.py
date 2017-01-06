@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-]
+urlpatterns = patterns(’’,
+# Students urls
+url(r’^$’, ’students.views.students_list’, name=’home’),
+url(r’^admin/’, include(admin.site.urls)),
+)
